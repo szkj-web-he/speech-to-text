@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import worklet from "worklet-loader!./audioWorker.worklet.ts";
 /**
  * 获取设备失败
  */
