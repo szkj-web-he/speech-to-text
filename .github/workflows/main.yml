@@ -1,16 +1,17 @@
+# Sample workflow for building and deploying a Jekyll site to GitHub Pages
 name: Build and Deploy
 on:
+  # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
 
 permissions:
   contents: write
-
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout 🛎️
         uses: actions/checkout@v3
 
       - name: Use Node
@@ -18,14 +19,14 @@ jobs:
         with:
           node-version: "14"
 
-      - name: Install and Build 
+      - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
         run: |
           echo "${{ secrets.NPMRC_TOKEN }}" > .npmrc
           npm install
-          npm run releases
+          npm run build
 
-     - name: Deploy 🚀
+      - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: page
-          folder: ./App/build
+          folder: ./build # The folder the action should deploy.
