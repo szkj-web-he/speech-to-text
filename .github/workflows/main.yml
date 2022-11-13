@@ -1,21 +1,31 @@
-name: library
+name: Build and Deploy
 on:
-    push:
-        branches: main
+  push:
+    branches: ["main"]
 
+permissions:
+  contents: write
 jobs:
-    build:
-        runs-on: ubuntu-latest
-        steps:
-            - name: check code
-              uses: actions/checkout@v3
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
 
-            - name: Install and Build
-              run: |
-                  npm install
-                  npm run releases
+      - name: Use Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: "14"
 
-            - name: github pages
-              uses: crazy-max/ghaction-github-pages@v3.0.0
-              with:
-                  build_dir: build
+      - name: Install and Build 
+        run: |
+          echo "${{ secrets.NPMRC_TOKEN }}" > .npmrc
+          npm install
+          npm run releases
+
+      - name: Deploy
+        uses: crazy-max/ghaction-github-pages@v3.0.0
+        with:
+          build_dir: ./build
+        env:
+          GITHUB_TOKEN: ${{secrets.MY_TOKEN}}

@@ -3,11 +3,11 @@
  */
 
 import Button from "./../../Components/Button/index";
-import { start } from "./Unit/useAudio";
+// import { start } from "./Unit/useAudio";
 
 const Temp: React.FC = () => {
     const handleStart = (res: boolean) => {
-        start();
+        // start();
     };
 
     return (
