@@ -1,0 +1,2 @@
+/*! For license information please see 52.b8b1d2e132c6aadcc4f6.js.LICENSE.txt */
+"use strict";(self.webpackChunkspeech_to_text=self.webpackChunkspeech_to_text||[]).push([[52],{936:e=>{e.exports=JSON.parse('{"9":{"176":{"180":{"keys":[7,"",40,1],"grid":[" "," "," "," ","!# /","#!!#$! -","05","!!## .","#% -","08","08","08","!% -","12","12","12"]}}},"13":{"2819":{"2885":{"keys":[7,"",40],"grid":[" "," "," ","!## "]},"2886":{"keys":["",40,7],"grid":[" \'!##)"," )#)"," (#*","02"," %#-","04","04","04","01","01","01","01","01","01","01","01"]}}}}')}}]);
